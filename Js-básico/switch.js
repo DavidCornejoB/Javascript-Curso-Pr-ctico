@@ -1,0 +1,25 @@
+//CONDICIONALES SWITCH:
+
+var numero;
+
+switch(numero){//VAMOS A VALIDAR TODOS LOS CASOS PARA LA VARIABLE NUMERO
+
+    case 1: //EL NUMERO ES 1?
+        //SI EL NUMERO ES 1, SE EJECUTA SOLO ÉSTE CASO
+        console.log("el numero es el 1");
+        break;//UNA VEZ EJECUTADO ÉSTE CASO, SE ROMPE EL SWITCH PARA NO EJECUTAR LOS DEMÁS CASOS
+        
+    case 2: //EL NUMERO ES 2?
+        //SI EL NUMERO ES 2, SE EJECUTA SOLO ÉSTE CASO
+        console.log("el numero es el 2");
+        break; //UNA VEZ EJECUTADO ÉSTE CASO, SE ROMPE EL SWITCH PARA NO EJECUTAR LOS DEMÁS CASOS
+
+    case 3: //EL NUMERO ES 3?
+        //SI EL NUMERO ES 3, SE EJECUTA SOLO ÉSTE CASO
+        console.log("el numero es el 3");
+        break;//UNA VEZ EJECUTADO ÉSTE CASO, SE ROMPE EL SWITCH PARA NO EJECUTAR LOS DEMÁS CASOS
+
+    default: //SI NO SE CUMPLEN NINGUNO DE LOS CASOS, SE EJECUTA ÉSTE CASO
+        console.log("el numero no es ni 1, ni 2, ni 3");
+}
+//SE EJECUTA ÉSTA LINEA LUEGO DEL BREAK DE CUALQUIER CASO, O LUEGO DE HABER EJECUTADO EL DEFAULT
