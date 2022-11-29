@@ -36,14 +36,14 @@ console.log(primerString + segundoString); //CONCATENACIÓN: RESULTADO = "David 
 /**
  * DETERMINA EL NOMBRE Y TIPO DE DATO PARA ALMACENAR LAS VARIABLES
  * DE LA SIGUIENTE INFORMACIÓN:
- * Nombre
- * Apellido
- * Nombre de usuario en Platzi
- * Edad
- * Correo electrónico
- * Mayor de edad
- * Dinero ahorrado
- * Deudas
+ * Nombre: string
+ * Apellido: string
+ * Nombre de usuario en Platzi: objeto
+ * Edad: int
+ * Correo electrónico: string
+ * Mayor de edad: boolean
+ * Dinero ahorrado: double
+ * Deudas: double
  */
 
 let nombre = "David";
@@ -51,14 +51,18 @@ let apellido = "Cornejo";
 let usuarioPlatzi = {
     nombre: "David",
     apellido: "Cornejo",
+    nickname: "Mossberg",
     correo: "luisdavidcorbra24@gmail.com",
     plan: "Platzi Expert"
 }
 let edad = 24;
 let correo = "luisdavidcorbra24@gmail.com";
-let mayorEdad = true;
+let isMayorEdad = true;
 let dineroAhorrado = 500.5;
-let deudas = null;
+let deudas = 0;
+
+console.log("nombre: " + nombre + ", apellido: " + apellido);
+console.log("dinero real: " + (dineroAhorrado - deudas));
 
 /**
  * QUE ES UNA FUNCION?
@@ -78,13 +82,22 @@ let deudas = null;
  * Un argumento es un dato con el que dicho parámetro ingresa en la función
  */
 
-var funcion = function(name, lastname, nickname){
+//FUNCION COMO VARIABLE
+var funcion = function(name, lastname, nickname) {
     let completeName = name + lastname;
     console.log("Mi nombre es " + completeName + ", pero prefiero que me digas "
     + nickname + ".");
 }
 
 funcion("David", "Cornejo", "Mossberg");
+
+//FUNCION NORMAL
+function segundaFuncion(name, lastname, nickname) {
+    let completeName = name + lastname
+    console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname);
+}
+
+segundaFuncion("David", "Cornejo", "Mossberg")
 
 /**
  * QUE ES UNA CONDICIONAL?
@@ -262,10 +275,18 @@ while (i >= 2) {
  * Dichos parámetros pueden incluso ser de distintos tipos de datos.
  */
 
+const ejemploArreglo = ["david", "cornejo", 24]
+
 /**
  * QUE ES UN OBJETO?
  * Es un elemento conformado por varias variables, que son sus atributos
  */
+
+const ejemploObjeto = {
+    nombre: "David",
+    apellido: "Cornejo",
+    edad: 24 
+}
 
 /**
  * CUANDO ES MEJOR USAR OBJETOS O ARRAYS?
@@ -286,11 +307,17 @@ while (i >= 2) {
  * elemento
  */
 let arreglo = ["param1", "param2", "param3"]
+
 recibirArray = function (array) {
     console.log(array[0]);
 }
 
+function fRecibirArray(array) {
+    console.log(array[0]);
+}
+
 recibirArray(arreglo);
+fRecibirArray(arreglo);
 
 /**
  * Crea una función que pueda recibir cualquier array como parámetro e imprima
@@ -304,7 +331,14 @@ recibirArray = function (array) {
     }
 }
 
+function fRecibirArray(arreglo) {
+    for (let i = 0; i< arreglo.length; i++) {
+      console.log(arreglo[i]);
+    }
+}
+
 recibirArray(arreglo2);
+fRecibirArray(arreglo2)
 
 /**
  * Crea una función que pueda recibir cualquier objeto como parámetro e imprima
@@ -333,4 +367,25 @@ imprimirObjeto = function (object) {
 }
 
 imprimirObjeto(objeto);
+
+//****************************************************
+//****************************************************
+
+//FUNCION NORMAL:
+function fRecibirObjeto(object) {
+    for (var prop in object) {
+        console.log(prop);
+    }
+}
+
+fRecibirObjeto(objeto)
+
+//FUNCION NORMAL:
+function fImprimirObjeto(object) {
+    object.values(objeto).forEach(elemento => {
+        console.log(elemento);
+    })
+}
+
+fImprimirObjeto(objeto)
 
