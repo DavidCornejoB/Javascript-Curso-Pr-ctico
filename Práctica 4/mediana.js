@@ -1,3 +1,6 @@
+const pregunta = document.getElementById('array')
+const respuesta = document.getElementById('respuesta')
+
 const lista1 = [
     300,
     100, 
@@ -62,13 +65,8 @@ function calcularMediana(lista) {
         mediana = lista1[mitadLista]
         return mediana;
     }
+
+    pregunta.innerHTML = "asfsdf"
 }
 
 console.log(calcularMediana(lista1))
-
-
-
-
-
-
-
